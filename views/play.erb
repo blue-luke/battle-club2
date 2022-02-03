@@ -1,0 +1,44 @@
+Hello there, <%= @game.player1.name %> and <%= @game.player2.name %>, are you ready to play?
+<br> </br>
+
+Player 1: <%= @game.player1.name %> has <%= @game.player1.hp %> HP
+<br> </br>
+
+Player 2: <%= @game.player2.name %> has <%= @game.player2.hp %> HP
+<br> </br>
+
+It is <%= @game.next_player.name %>'s turn
+<br> </br>
+<% if @game.next_player.asleep %>
+<%= @game.next_player.name %> is asleep. Your actions will have no effect
+<% end %>
+<br> </br>
+<% if @game.next_player == @game.player2 %>
+
+  <form action="/deduct_player1_hp" method="post">
+  Attack <%= @game.player1.name %> <input type="submit" id='Attack!'>
+  </form>
+
+  <form action="/defend_player2" method="post">
+  Defend <%= @game.player2.name %> <input type="submit" id='Defend!'>
+  </form>
+
+  <form action="/sleep_player1" method="post">
+  Put <%= @game.player1.name %> to sleep <input type="submit" id='Put to sleep!'>
+  </form>
+
+<% elsif @game.next_player == @game.player1 %>
+
+  <form action="/deduct_player2_hp" method="post">
+  Attack <%= @game.player2.name %> <input type="submit" id='Attack!'>
+  </form>
+
+  <form action="/defend_player1" method="post">
+  Defend <%= @game.player1.name %> <input type="submit" id='Defend!'>
+  </form>
+
+  <form action="/sleep_player2" method="post">
+  Put <%= @game.player2.name %> to sleep <input type="submit" id='Put to sleep!'>
+  </form>
+
+<% end %>
