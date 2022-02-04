@@ -7,13 +7,13 @@ Player 1: <%= @game.player1.name %> has <%= @game.player1.hp %> HP
 Player 2: <%= @game.player2.name %> has <%= @game.player2.hp %> HP
 <br> </br>
 
-It is <%= @game.next_player.name %>'s turn
+It is <%= @game.current_player.name %>'s turn
 <br> </br>
-<% if @game.next_player.asleep %>
-<%= @game.next_player.name %> is asleep. Your actions will have no effect
+<% if @game.current_player.asleep %>
+<%= @game.current_player.name %> is asleep. Your actions will have no effect
 <% end %>
 <br> </br>
-<% if @game.next_player == @game.player2 %>
+<% if @game.current_player == @game.player2 %>
 
   <form action="/deduct_player1_hp" method="post">
   Attack <%= @game.player1.name %> <input type="submit" id='Attack!'>
@@ -27,7 +27,7 @@ It is <%= @game.next_player.name %>'s turn
   Put <%= @game.player1.name %> to sleep <input type="submit" id='Put to sleep!'>
   </form>
 
-<% elsif @game.next_player == @game.player1 %>
+<% elsif @game.current_player == @game.player1 %>
 
   <form action="/deduct_player2_hp" method="post">
   Attack <%= @game.player2.name %> <input type="submit" id='Attack!'>
