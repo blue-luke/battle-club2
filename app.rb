@@ -14,12 +14,12 @@ class Battle < Sinatra::Base
     erb :index
   end
 
-  post '/names' do
+  post '/play' do
     player1 = Player.new(params[:player1])
     player2 = Player.new(params[:player2])
     $game = Game.new(player1, player2)
 
-    redirect '/names'
+    redirect '/play'
   end
 
   post '/attack' do
@@ -27,21 +27,21 @@ class Battle < Sinatra::Base
     if $game.winner
       redirect '/winner'
     else
-      redirect '/names'
+      redirect '/play'
     end
   end
 
   post '/sleep' do
     $game.put_to_sleep
-    redirect '/names'
+    redirect '/play'
   end
 
   post '/defend' do
     $game.defend
-    redirect '/names'
+    redirect '/play'
   end
 
-  get '/names' do
+  get '/play' do
     @game = $game
     erb :play
   end
