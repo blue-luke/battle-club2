@@ -10,6 +10,10 @@ However, I am following the tutorial at the moment, so this question is moot.
 
 I should use a vertical approach an another web project to allow me to compare the two approaches.
 
+## Highlights
+
+- The test 'Successfully defend player 2', lines 19 to 31 in attack_a_player_spec.rb. Line 26 features an 'unstubbing' of a method call. This is necessary because the method has to be stubbed initially (line 20) to ensure a specific amount of damage is incurred by player 2 (line 24). However, stubbing the method also avoids the 'defend' functionality, which we want to then test for. So, unstubbing is necessary.
+
 ## Basic user stories
 
 As two Players,
