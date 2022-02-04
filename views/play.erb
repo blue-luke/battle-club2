@@ -13,6 +13,7 @@ It is <%= @game.current_player.name %>'s turn
 <%= @game.current_player.name %> is asleep. Your actions will have no effect
 <% end %>
 <br> </br>
+
 <form action="/attack" method="post">
 Attack <%= @game.opponent.name %> <input type="submit" id='Attack!'>
 </form>
