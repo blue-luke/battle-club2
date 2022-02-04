@@ -22,6 +22,11 @@ class Battle < Sinatra::Base
     redirect '/play'
   end
 
+  get '/play' do
+    @game = $game
+    erb :play
+  end
+
   post '/attack' do
     $game.attack
     if $game.winner
@@ -39,11 +44,6 @@ class Battle < Sinatra::Base
   post '/defend' do
     $game.defend
     redirect '/play'
-  end
-
-  get '/play' do
-    @game = $game
-    erb :play
   end
 
   get '/winner' do

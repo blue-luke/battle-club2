@@ -10,7 +10,9 @@ class Game
   end
 
   def attack
-    @current_player.attack(@opponent)
+    unless @current_player.asleep
+      @opponent.get_attacked
+    end
     switch_player
     winner?
   end
@@ -30,6 +32,7 @@ class Game
   end
 
   def switch_player
+    @current_player.wake_up
     if @current_player == @player1
       @current_player = @player2
       @opponent = @player1

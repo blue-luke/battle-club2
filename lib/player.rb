@@ -6,7 +6,7 @@ class Player
     @defending = false
     @asleep = false
   end
-  def get_attacked
+  def deduct_hp
     @hp -= calculate_damage
   end
   def calculate_damage
@@ -18,17 +18,17 @@ class Player
       0
     end
   end
-  def attack(player)
-    unless @asleep
-      player.get_attacked
-    end
-    @asleep = false
+  def get_attacked
+    self.deduct_hp
   end
   def defend
     @defending = true
   end
   def calculate_sleep_odds
     rand(10)
+  end
+  def wake_up
+    @asleep = false
   end
   def go_to_sleep
     if calculate_sleep_odds > 5
