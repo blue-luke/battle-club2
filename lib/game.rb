@@ -20,11 +20,6 @@ class Game
     switch_player
   end
 
-  # def defend(player)
-  #   player.defend
-  #   switch_player
-  # end
-
   def defend
     @current_player.defend
     switch_player

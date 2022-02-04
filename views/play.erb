@@ -15,29 +15,29 @@ It is <%= @game.current_player.name %>'s turn
 <br> </br>
 <% if @game.current_player == @game.player2 %>
 
-  <form action="/deduct_player1_hp" method="post">
+  <form action="/attack" method="post">
   Attack <%= @game.player1.name %> <input type="submit" id='Attack!'>
   </form>
 
-  <form action="/defend_player2" method="post">
+  <form action="/defend" method="post">
   Defend <%= @game.player2.name %> <input type="submit" id='Defend!'>
   </form>
 
-  <form action="/sleep_player1" method="post">
+  <form action="/sleep" method="post">
   Put <%= @game.player1.name %> to sleep <input type="submit" id='Put to sleep!'>
   </form>
 
 <% elsif @game.current_player == @game.player1 %>
 
-  <form action="/deduct_player2_hp" method="post">
+  <form action="/attack" method="post">
   Attack <%= @game.player2.name %> <input type="submit" id='Attack!'>
   </form>
 
-  <form action="/defend_player1" method="post">
+  <form action="/defend" method="post">
   Defend <%= @game.player1.name %> <input type="submit" id='Defend!'>
   </form>
 
-  <form action="/sleep_player2" method="post">
+  <form action="/sleep" method="post">
   Put <%= @game.player2.name %> to sleep <input type="submit" id='Put to sleep!'>
   </form>
 
