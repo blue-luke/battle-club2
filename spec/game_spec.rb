@@ -16,9 +16,9 @@ describe 'game' do
     player2_double = double("Player", :name => "John", :hp => 100, :get_attacked => true, :defend => true)
 
     g = Game.new(player1_double, player2_double)
-    g.defend(player2_double)
+    g.defend
 
-    expect(player2_double).to have_received(:defend)
+    expect(player1_double).to have_received(:defend)
   end
 
   it 'stores player names' do

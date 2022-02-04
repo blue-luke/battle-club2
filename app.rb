@@ -51,12 +51,12 @@ class Battle < Sinatra::Base
   end
 
   post '/defend_player1' do
-    $game.defend($game.player1)
+    $game.defend
     redirect '/names'
   end
 
   post '/defend_player2' do
-    $game.defend($game.player2)
+    $game.defend
     redirect '/names'
   end
 
