@@ -32,7 +32,7 @@ class Battle < Sinatra::Base
   end
 
   post '/sleep_player2' do
-    $game.put_to_sleep($game.player2)
+    $game.put_to_sleep
     redirect '/names'
   end
 
@@ -46,7 +46,7 @@ class Battle < Sinatra::Base
   end
 
   post '/sleep_player1' do
-    $game.put_to_sleep($game.player1)
+    $game.put_to_sleep
     redirect '/names'
   end
 

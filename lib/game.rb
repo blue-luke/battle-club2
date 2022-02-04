@@ -5,6 +5,7 @@ class Game
     @player1 = player1
     @player2 = player2
     @current_player = @player1
+    @opponent = @player2
     @winner = nil
   end
 
@@ -18,8 +19,13 @@ class Game
     winner?
   end
 
-  def put_to_sleep(player)
-    player.go_to_sleep
+  # def put_to_sleep(player)
+  #   player.go_to_sleep
+  #   switch_player
+  # end
+
+  def put_to_sleep
+    @opponent.go_to_sleep
     switch_player
   end
 
@@ -35,8 +41,10 @@ class Game
   def switch_player
     if @current_player == @player1
       @current_player = @player2
+      @opponent = @player1
     elsif @current_player == @player2
       @current_player = @player1
+      @opponent = @player2
     end
   end
   
