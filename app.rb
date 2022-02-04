@@ -23,7 +23,7 @@ class Battle < Sinatra::Base
   end
 
   post '/deduct_player2_hp' do
-    $game.attack($game.player2)
+    $game.attack
     if $game.winner
       redirect '/winner'
     else
@@ -37,7 +37,7 @@ class Battle < Sinatra::Base
   end
 
   post '/deduct_player1_hp' do
-    $game.attack($game.player1)
+    $game.attack
     if $game.winner
       redirect '/winner'
     else

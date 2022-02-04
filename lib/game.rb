@@ -9,20 +9,21 @@ class Game
     @winner = nil
   end
 
-  def attack(player)
-    if player == @player1
-      @player2.attack(@player1)
-    elsif player == @player2
-      @player1.attack(@player2)
-    end
+  # def attack(player)
+  #   if player == @player1
+  #     @player2.attack(@player1)
+  #   elsif player == @player2
+  #     @player1.attack(@player2)
+  #   end
+  #   switch_player
+  #   winner?
+  # end
+
+  def attack
+    @current_player.attack(@opponent)
     switch_player
     winner?
   end
-
-  # def put_to_sleep(player)
-  #   player.go_to_sleep
-  #   switch_player
-  # end
 
   def put_to_sleep
     @opponent.go_to_sleep

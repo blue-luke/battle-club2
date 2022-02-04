@@ -6,7 +6,7 @@ describe 'game' do
     player2_double = double("Player", :name => "John", :hp => 100)
 
     g = Game.new(player1_double, player2_double)
-    g.attack(player2_double)
+    g.attack
 
     expect(player1_double).to have_received(:attack)
   end
