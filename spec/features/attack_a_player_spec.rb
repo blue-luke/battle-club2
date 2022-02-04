@@ -41,7 +41,6 @@ feature 'Attacking a player' do
 
     expect(page).to have_content 'is asleep. Your actions will have no effect'
   end
-  # 
   scenario 'Players cannot attack when asleep' do
     allow_any_instance_of(Player).to receive(:calculate_sleep_odds).and_return(10)
 

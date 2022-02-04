@@ -60,4 +60,9 @@ describe 'player' do
     p1.get_attacked
     expect(p1.asleep).to eq false
   end
+  it 'prints player status' do
+    p1 = Player.new("Jane")
+
+    expect(p1.status).to eq "Jane has 100 HP"
+  end
 end

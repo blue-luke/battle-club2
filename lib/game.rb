@@ -18,12 +18,16 @@ class Game
   end
 
   def put_to_sleep
-    @opponent.go_to_sleep
+    unless @current_player.asleep
+      @opponent.go_to_sleep
+    end
     switch_player
   end
 
   def defend
-    @current_player.defend
+    unless @current_player.asleep
+      @current_player.defend
+    end
     switch_player
   end
 

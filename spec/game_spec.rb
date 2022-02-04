@@ -12,7 +12,7 @@ describe 'game' do
   end
 
   it 'defends a player' do
-    player1_double = double("Player", :defend => true, :wake_up => true)
+    player1_double = double("Player", :defend => true, :wake_up => true, :asleep => false)
     player2_double = double("Player")
 
     g = Game.new(player1_double, player2_double)
@@ -46,5 +46,13 @@ describe 'game' do
     expect(player2_double).to_not receive(:get_attacked)
 
     g.attack
+  end
+  it 'prints player status' do
+    player1_double = double("Player", :asleep => true, :wake_up => true, :hp => 100)
+    player2_double = double("Player", :hp => 100)
+
+    g = Game.new(player1_double, player2_double)
+
+
   end
 end

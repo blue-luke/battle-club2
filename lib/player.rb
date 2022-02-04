@@ -37,4 +37,7 @@ class Player
       @asleep = false
     end
   end
+  def status
+    "#{@name} has #{@hp} HP"
+  end
 end
