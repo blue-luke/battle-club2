@@ -1,3 +1,5 @@
+require 'spec_helper.rb'
+
 feature 'See hit points' do
   scenario 'Can fill in names then see hit points' do
     sign_in_and_play

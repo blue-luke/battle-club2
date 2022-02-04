@@ -1,3 +1,5 @@
+require 'spec_helper.rb'
+
 feature 'Can fill names' do
   scenario 'Can fill in then see names' do
     sign_in_and_play

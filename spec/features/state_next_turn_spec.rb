@@ -1,3 +1,5 @@
+require 'spec_helper.rb'
+
 feature 'State next turn' do
   scenario 'Player 1 goes first' do
     sign_in_and_play

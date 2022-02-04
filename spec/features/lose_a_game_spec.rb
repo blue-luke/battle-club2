@@ -1,3 +1,5 @@
+require 'spec_helper.rb'
+
 feature 'State next turn' do
   scenario 'A winner is announced' do
     allow_any_instance_of(Player).to receive(:calculate_damage).and_return(10)

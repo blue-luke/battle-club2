@@ -1,3 +1,5 @@
+require 'spec_helper.rb'
+
 feature 'Attacking a player' do
   scenario 'Sucessfully attack' do
     allow_any_instance_of(Player).to receive(:calculate_damage).and_return(10)
