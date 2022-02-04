@@ -13,32 +13,14 @@ It is <%= @game.current_player.name %>'s turn
 <%= @game.current_player.name %> is asleep. Your actions will have no effect
 <% end %>
 <br> </br>
-<% if @game.current_player == @game.player2 %>
+<form action="/attack" method="post">
+Attack <%= @game.opponent.name %> <input type="submit" id='Attack!'>
+</form>
 
-  <form action="/attack" method="post">
-  Attack <%= @game.player1.name %> <input type="submit" id='Attack!'>
-  </form>
+<form action="/defend" method="post">
+Defend <%= @game.current_player.name %> <input type="submit" id='Defend!'>
+</form>
 
-  <form action="/defend" method="post">
-  Defend <%= @game.player2.name %> <input type="submit" id='Defend!'>
-  </form>
-
-  <form action="/sleep" method="post">
-  Put <%= @game.player1.name %> to sleep <input type="submit" id='Put to sleep!'>
-  </form>
-
-<% elsif @game.current_player == @game.player1 %>
-
-  <form action="/attack" method="post">
-  Attack <%= @game.player2.name %> <input type="submit" id='Attack!'>
-  </form>
-
-  <form action="/defend" method="post">
-  Defend <%= @game.player1.name %> <input type="submit" id='Defend!'>
-  </form>
-
-  <form action="/sleep" method="post">
-  Put <%= @game.player2.name %> to sleep <input type="submit" id='Put to sleep!'>
-  </form>
-
-<% end %>
+<form action="/sleep" method="post">
+Put <%= @game.opponent.name %> to sleep <input type="submit" id='Put to sleep!'>
+</form>
