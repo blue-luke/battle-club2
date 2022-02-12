@@ -1,14 +1,22 @@
 # Battle - a web project with testing frameworks
 
-## Approach
+## Set-up
 
-There is the question of how to develop functionality: horizontally, doing the logic first then the web interface second; or vertically, implementing one piece of functionality logically and in the interface before proceeding to the next piece of functionality.
+- Clone the repo and pull it locally
+- Run bundle to install dependencies
+- To start server, run: $ rackup 
+- Visit local host on assigned port
+- Play game
 
-I think it is better to do it horizontally, as this will reduce the scope for errors and reduce the need for refactoring... hopefully. Though, I will only do the basic user stories before doing the interface, returning to advanced user stories later.
+## Playing the game
 
-However, I am following the tutorial at the moment, so this question is moot.
-
-I should use a vertical approach an another web project to allow me to compare the two approaches.
+- The game is a simple 'battle' between two named players
+- Enter two names and click 'Play!'
+- Observe whose turn it is. Each player has 3 options
+- Option 1 - Attack the other player. This deals a random amount of damage (0 to 9 HP, inclusive)
+- Option 2 - Defend yourself. This guarantees that you will not sustain any damage if they attack next turn
+- Option 3 - Put the other play to sleep. This has a 50% chance of putting your opponent to sleep, meaning they cannot act at all next turn
+- A winner is declared when one player reaches 0 HP
 
 ## Highlights
 
@@ -71,7 +79,6 @@ So I can enjoy a game of Battle with more variety,
 I want to choose from a range of attacks I could make
 
 --- Above this line means completed ---
-
 
 As a lonely Player,
 So I can keep my Battle skills up to scratch
