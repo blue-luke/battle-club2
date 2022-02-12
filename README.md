@@ -4,6 +4,7 @@
 
 - Clone the repo and pull it locally
 - Run bundle to install dependencies
+- To check tests, run: $ rspec
 - To start server, run: $ rackup 
 - Visit local host on assigned port
 - Play game
